@@ -1,0 +1,419 @@
+/* global functionality */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Google Sans","Roboto", sans-serif;
+    /* font-size: 16px; */
+}
+
+@font-face {
+    font-family: "Google Sans Display";
+    src: url("/font/google-sans-display.woff2");
+}
+@font-face {
+    font-family: "Google Sans";
+    src: url("/font/google-sans.woff2");
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/font/roboto.woff2");
+}
+
+body{
+    font-family: "Google Sans","Roboto", sans-serif;
+    font-size: 16px;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+a, button{
+    font-family: "Google Sans","Roboto", sans-serif;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a{    
+    text-decoration: none;
+    font-family: "Google Sans","Roboto", sans-serif;
+    color: #3c4043;
+}
+a:focus, button{
+    outline: none;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+}
+svg{
+    fill: #5f6368;
+}
+input{
+    border: none;
+    background-color: transparent;
+}
+input:focus{
+    outline: none;
+}
+input[type="checkbox"]{
+    cursor: pointer;
+}
+/*------------------------------ global functionality ------------------------------*/
+
+/* nav section */
+nav{
+    z-index: 10;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+.nav-container{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 15%;
+    transition: all 0.2s ease;
+}
+.branding-icon{
+    width: fit-content;
+}
+.branding-icon svg:nth-child(1){
+    width: 8.3rem;
+}
+.branding-icon svg:nth-child(2){
+    width: 1.5rem;
+    display: none;
+}
+.store-icons{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.store-icons svg{
+    width: 1.5rem;
+}
+.store-icons a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.store-icons a:hover svg{
+    fill: #1967d2;
+}
+.search-icon, .help-icon, .cart-icon, .user-icon{
+    margin-left: 1.5rem;
+}
+.search-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+    display: none;
+}
+.search-label{
+    display: flex;
+    align-items: center;
+    background-color: #3c404313;
+    padding: 0.7rem;
+    border-radius: 2px;
+}
+.search-label svg{
+    width: 1.5rem;
+}
+.search-input{
+    width: 25rem;
+    padding: 0rem 0.7rem;
+}
+
+/* welcome section */
+.welcome-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.welcome-container{
+    text-align: center;
+    padding: 4rem 0;
+}
+.welcome-container h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.4rem;
+    font-weight: 900;
+    font-family: "Google Sans Display", "Google Sans", "Roboto", sans-serif;
+    color: #3c4043;
+}
+.welcome-container > h1 > span{
+    color: #188038;
+}
+
+/* product section */
+.product-section{
+    width: 100%;
+    display: grid;
+    grid-template-areas: "type list";
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.product-type{
+    grid-area: type;
+    width: 20vw;
+    padding: 0 0 0 3rem;
+    font-size: 16px;
+    color: #3c4043;
+}
+.product-type h5{
+    padding-bottom: 1rem;
+}
+.product-type label{
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0;
+    font-size: 14px;
+}
+.product-type p{
+    padding-left: 0.5rem;
+    font-size: 12px;
+}
+.product-list{
+    grid-area: list;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(3,  minmax(100px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 5rem;
+    padding: 0 2rem;
+}
+.product{
+    width: 100%;
+    height: 100%;
+}
+.product:focus{
+    border: 1px solid #00000015;
+}
+.product > h4{
+    padding: 0.5rem 0;
+}
+.product:hover > .product-img img{
+    transform: scale(1.05);
+}
+.product-img{
+    width: 100%;
+    height: 100%;
+    padding: 3rem 1rem;
+    display: grid;
+    place-content: center;
+    background-color: #F8F9FA;
+}
+.product-img > img{
+    width: 100%;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* extra functionalities */
+.other-features-section{
+    width: 100%;
+    margin-top: 1rem;
+    padding: 6rem 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.other-features-section div{
+    width: fit-content;
+    height: fit-content;
+}
+.other-features-container{
+    display: flex;
+}
+.other-features-container > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+}
+.other-features-section a{
+    padding: 1rem 2rem;
+    background-color: white;
+    font-size: 14px;
+}
+.other-features-section a:hover{
+    color: #1967d2;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15%;
+    color: #3c4043;
+}
+footer a{
+    font-size: 12px;
+    font-weight: 100;
+}
+.footer-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 1px solid #00000015;
+}
+.footer-icons{ 
+    display: flex;
+}
+.footer-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    margin-right: 1rem;
+}
+.footer-icons > a > svg{
+    fill: #3c4043;
+}
+.site-services{
+    display: inline-block;
+}
+.site-services > a{
+    margin-right: 2rem;
+}
+.site-services > a:nth-child(1) > img{
+    margin-right: 0.5rem;
+}
+
+/*--------------------------- media queries ---------------------------*/
+@media only screen and (max-width: 1400px){
+    /* navbar */
+    .nav-container{
+        padding: 1rem 4%;
+    }
+} 
+@media only screen and (max-width: 1000px){
+    /* navbar */
+    .help-icon{
+        display: none;
+    }
+    .product > h4{
+        font-size: 14px;
+    }
+
+    /* footer */
+    footer{
+        padding: 0 5%;
+    }
+    .footer-container{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .site-services{
+        margin-top: 1rem;
+    }
+    .site-services > a{
+        display: inline-block;
+        margin-right: 0.7rem;
+    }
+} 
+@media only screen and (max-width: 768px){
+    /* product section */
+    .product-section{
+        grid-template-areas: "type" "list";
+    }
+    .product-type{
+        width: 100%;
+    }
+    .product-list{
+        width: 100%;
+        grid-template-columns: repeat(2,  minmax(100px, 1fr));
+        grid-column-gap: 1rem;
+    }
+    .product-type{
+        z-index: 1;
+        position: relative;
+        padding: 0;
+        margin-bottom: 0.5rem;
+    }
+    .product-type h5{
+        width: 100%;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+        padding: 1rem 0;
+        background-color: #F8F9FA;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+            -ms-user-select: none; 
+                user-select: none;
+    }
+    .product-type form{
+        z-index: 3;
+        width: 100%;
+        height: 0rem;
+        position: absolute;
+        top: 115%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background: white;
+        box-shadow: 0px 13px 8px #00000060;
+        overflow: hidden;
+        transition: height 0.25s ease-in-out;
+    }
+    .product-type label{
+        padding: 0 0 0 2rem;
+    }
+    .product-type h5:focus > label{
+        height: 6rem;
+    }
+
+    /* extra functionalities */
+    .other-features-section{
+        padding: 6rem 2rem;
+        align-items: flex-start;
+    }
+    .other-features-container{
+        display: unset;
+    }
+    .other-features-section a{
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    /* navbar */
+    .search-icon, .help-icon, .cart-icon, .user-icon{
+        margin-left: 1.2rem;
+    }
+    .branding-icon svg:nth-child(1){
+        display: none;
+    }
+    .branding-icon svg:nth-child(2){
+        display: unset;
+    }
+    
+    /* welcome section */
+    .welcome-container h1{
+        font-size: 2.3rem;
+    }
+}
